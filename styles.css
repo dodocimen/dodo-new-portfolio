@@ -1442,10 +1442,12 @@ html.dark .header-title {
   margin: 6px 0;
   display: inline-block;
   border-color: rgba(255,255,255,0.18);
+  opacity: .6;
 }
 
 .footer-email:hover,
 .footer-email:focus {
+  opacity:1;
   outline: none;
   border-bottom: 1px #ff8025 solid;
 }

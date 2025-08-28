@@ -832,6 +832,47 @@
   }
 })()
 
+// --- "Skip to product" -> scroll to final-group inside the modal content ---
+;(function () {
+  const modal = document.getElementById('projectModal')
+  if (!modal) return
+
+  const content = modal.querySelector('.project-modal__content')
+
+  function scrollToFinalGroup(fromButton) {
+    if (!content) return
+
+    // Active (visible) panel in the modal
+    const activePanel = modal.querySelector('.project-panel:not([hidden])') || (fromButton && fromButton.closest && fromButton.closest('.project-panel')) || modal
+
+    // Target element (final group) inside the active panel; fallback to any in the modal
+    const target = (activePanel && activePanel.querySelector && activePanel.querySelector('.final-group')) || modal.querySelector('.final-group')
+
+    // Compute scrollTop relative to the scroll container
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const top = target
+      ? (target.getBoundingClientRect().top - content.getBoundingClientRect().top + content.scrollTop)
+      : content.scrollHeight
+
+    content.scrollTo({ top, behavior: prefersReducedMotion ? 'auto' : 'smooth' })
+
+    // Accessibility: move focus briefly so SR users know where we landed
+    if (target) {
+      target.setAttribute('tabindex', '-1')
+      try { target.focus({ preventScroll: true }) } catch (_) {}
+      setTimeout(() => target.removeAttribute('tabindex'), 800)
+    }
+  }
+
+  // Delegate clicks from any ".project-skip-btn" inside the modal
+  modal.addEventListener('click', (e) => {
+    const btn = e.target && e.target.closest && e.target.closest('.project-skip-btn')
+    if (!btn) return
+    e.preventDefault()
+    scrollToFinalGroup(btn)
+  })
+})()
+
 // Final product countdown and disabled button state (fixed calendar target)
 ;(function(){
   const finalBtn = document.querySelector('.prototype-link--final')
