@@ -407,11 +407,6 @@ html.dark .figure-links a:hover {
 }
 
 /* Icons */
-html.dark .week-icon,
-html.dark .week-icon svg {
-  color: #e5e7eb;
-  stroke: #e5e7eb;
-}
 
 /* Quotes */
 html.dark .quote {
@@ -1630,9 +1625,7 @@ html.dark .header-title {
   gap: 10px;
 }
 
-.week-icon {
-  color: #000000;
-}
+
 
 .week-title-group { text-align: left; }
 
