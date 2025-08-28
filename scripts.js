@@ -255,35 +255,6 @@
     })
   }
 
-  // Skip to product: always switch to panel 0 and scroll to .final-group inside it
-  if (modalOverlay) {
-    const skipBtns = modalOverlay.querySelectorAll('.project-skip-btn')
-    skipBtns.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault()
-        const content = modalOverlay.querySelector('.project-modal__content')
-        const stack = modalOverlay.querySelector('.project-modal-stack')
-        if (!content) return
-        // Ensure correct panel is active (panel 0 contains final-group)
-        setProjectTab(0)
-        if (stack) {
-          stack.classList.remove('theme-proj-0','theme-proj-1','theme-proj-2')
-          stack.classList.add('theme-proj-0')
-        }
-        // Wait a frame for layout after tab switch, then scroll accurately
-        requestAnimationFrame(() => {
-          const panel = modalOverlay.querySelector('.project-panel[data-index="0"]')
-          const target = panel ? panel.querySelector('.final-group') : null
-          if (!target) return
-          const contentRect = content.getBoundingClientRect()
-          const targetRect = target.getBoundingClientRect()
-          const top = (targetRect.top - contentRect.top) + content.scrollTop
-          content.scrollTo({ top, behavior: 'smooth' })
-        })
-      })
-    })
-  }
-
   // Wave animation trigger: start on mouseenter, let it finish
   const headerTitle = document.querySelector('.header-title')
   const waveEmoji = document.querySelector('.wave-emoji')
