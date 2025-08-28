@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doğa Çimen</title>
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar" id="top">
+        <div class="navbar-content">
+            <div class="brand" role="button" tabindex="0" aria-label="Return to top"><img class="brand-logo" src="./img/logo.svg" alt="logo" /><span class="brand-text">dogacimen.com</span></div>
+            <div class="navbar-right">
+                <div class="theme-toggler" tabindex="0" role="button" aria-label="Theme toggler (non-functional)">
+                    <svg class="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                    <div class="theme-separator"></div>
+                    <svg class="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </div>
+                <div class="navbar-separator">|</div>
+                <div class="palette-switcher" role="group" aria-label="Color palette switcher">
+                    <button class="swatch swatch-0" data-palette-index="0" aria-label="Palette 1" aria-pressed="false"></button>
+                    <button class="swatch swatch-1" data-palette-index="1" aria-label="Palette 2" aria-pressed="false"></button>
+                    <button class="swatch swatch-2" data-palette-index="2" aria-label="Palette 3" aria-pressed="false"></button>
+                    <button class="swatch swatch-3" data-palette-index="3" aria-label="Palette 4" aria-pressed="false"></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="header-wrap">
+            <h1 class="header-title"><span class="wave-emoji wave-once" aria-hidden="true">👋</span> I’m Doğa,<br/>  
+                a digital product designer based in Toronto.</h1>
+            <p class="header-copy">I help teams turn ideas into products that work well and look clean. You can see selected work below or <a href="#footer" class="contact-link" rel="noopener noreferrer">get in touch</a> if you'd like to learn more.</p>
+        </section>
+
+        <section id="projects" class="project-section">
+            <div class="project-deck">
+                <div class="project-card is-active" data-index="0">
+                    <a href="#" class="card-title-link">betbot.ai 
+                        <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <img class="project-card-icon" src="./img/mascot-white.svg" alt="Project mascot" />
+                </div>
+                <div class="project-card" data-index="1">
+                    <a href="#" class="card-title-link">boots & hearts
+                        <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <img class="project-card-icon" src="./img/project2.svg" alt="Project mascot" />
+                </div>
+                <div class="project-card" data-index="2">
+                    <a href="#" class="card-title-link">school of design 
+                        <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <img class="project-card-icon" src="./img/project3.svg" alt="Project mascot" />
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-box">
+            <p>I work across product design, UX/UI design, and sometimes early development.<br><br>For my most recent work, I designed and built an LLM web app as my first product composing multiple tools, from the idea stage through launch. <br><br>Beyond prototyping and UX/UI design, I enjoy creating graphics (visual and motion), <a href="https://dodocimen.github.io/dodos-task-planner/" class="subtle-link" target="_blank" rel="noopener noreferrer">helpful web tools</a>, and <a href="https://dodocimen.github.io/Ideas-and-Images--repository/" class="subtle-link" target="_blank" rel="noopener noreferrer">interactive web projects</a>.</p>
+        </section>
+    </main>
+
+    <!-- Project Modal -->
+    <div class="project-modal-overlay" id="projectModal" aria-hidden="true">
+        <div class="project-modal-stack theme-proj-0">
+            <div class="project-modal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+                <div class="project-modal__content">
+                    <section class="project-panel" role="tabpanel" data-index="0">
+                        <div class="project-modal__header">
+                            <div class="project-nav">
+                                <a href="#" class="project-back-link" aria-label="Go to previous project">
+                                    <svg class="arrow-icon arrow-icon--left" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                                    </svg>
+                                    Back
+                                </a>
+                                <a href="#" class="project-next-link" aria-label="Go to next project">
+                                    Next
+                                    <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="project-header-right">
+                                <button class="theme-toggler modal-theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false" title="Toggle dark mode">
+                                    <svg class="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="5"/>
+                                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                                    </svg>
+                                    <svg class="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="project-skip-btn" aria-label="Skip to live demo">skip to product ↓</button>
+                                <button type="button" class="project-close-btn" aria-label="Close modal">×</button>
+                            </div>
+                        </div>
+                        <div class="case-hero">
+                            <div class="case-hero__content">
+                                <div class="case-hero__group">
+                                    <h1 class="case-title" aria-label="UX Case Study title">Betbot.ai: <br/> A Case Study:</h1>
+                                    <h2 class="case-subtitle">How I Cut the Friction to Make Sports Betting Less Overwhelming.</h2>
+                                    <div class="case-tags-grid" aria-label="Tools used">
+                                        <span class="case-tag">figma</span>
+                                        <span class="case-tag">adobe photoshop</span>
+                                        <span class="case-tag">adobe illustrator</span>
+                                        <span class="case-tag">html, css & js</span>
+                                        <span class="case-tag">replit & v0.dev</span>
+                                        <span class="case-tag">cursor</span>
+                                    </div>
+                                </div>
+                                <div class="case-separator"></div>
+                                <div class="case-scope">
+                                    <div class="scope-left">
+                                        <h2 class="scope-title">Timeline</h2>
+                                        <p class="scope-desc">Total Duration: 5 Weeks</p>
+                                    </div>
+                                    <div class="scope-right">
+                                        <h2 class="scope-title">Milestones</h2>
+                                        <ul class="scope-list">
+                                            <li>Week 1: Discovery & User Research</li>
+                                            <li>Week 2: Market Validation</li>
+                                            <li>Week 3: Design & Prototyping</li>
+                                            <li>Week 4–5: MVP Build & Launch</li>
+                                        </ul>
+                                        <div class="scope-subtle-sep"></div>
+                                        <ul class="scope-list scope-future">
+                                            <li>Week 6+: Continuous Testing & Iteration</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="case-mockup-wrapper">
+                                    <div class="case-mockup">
+                                        <div class="figure-image-wrap">
+                                            <img src="./img/mockup-spohisticated.png" alt="Project mockup" class="mockup-image" />
+                                            <figcaption class="figure-title-overlay">Product Mockup</figcaption>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <section class="week-section" id="week1">
+                                    <header class="week-header">
+                                        <div class="week-header-inner">
+                                            <div class="week-icon" aria-hidden="true">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <circle cx="12" cy="12" r="9"/>
+                                                    <path d="M12 7v5l3 3"/>
+                                                </svg>
+                                            </div>
+                                            <div class="week-title-group">
+                                                <h1 class="week-title">Week 1</h1>
+                                                <p class="week-subtitle">Discovery and Defining the Problem</p>
+                                            </div>
+                                        </div>
+                                        <div class="week-separator"></div>
+                                    </header>
+                                    <div class="week-body">
+                                        <p>It began as a typical afternoon conversation with my mentor, who I respect a lot. We started with small talk, moved into career and life, then into sports, golf, and eventually sports betting. As we talked, the role of AI kept coming up. It was clear that AI was changing how games are played, how they are analyzed, and how bets are placed.
+                                            <br><br>
+                                            That evening I decided to look into how people research bets, and since the playoffs were on, I figured I would try placing one for myself, it seemed like a fun idea and a way to keep things interesting. I opened a few third-party, betting research sites and was met with endless pages of numbers, odds, and statistics. The volume alone was enough to push someone away.
+                                        <br><br>
+                                        <blockquote class="quote">If the process shut me out, it was shutting out countless others.</blockquote>
+                                        <br><br>
+
+                                        <figure class="week-banner figure-with-title">
+                                            <div class="figure-image-row">
+                                                <img src="./img/hofbets-placeholder.png" data-src="./img/hofbets.gif" alt="Week 1 banner A" loading="lazy" decoding="async" fetchpriority="low" />
+                                                <img src="./img/pickfinder-placeholder.png" data-src="./img/pickfinder.gif" alt="Week 1 banner B" loading="lazy" decoding="async" fetchpriority="low" />
+                                                <figcaption class="figure-title-overlay">Betting Research Apps</figcaption>
+                                            </div>
+                                        </figure>
+
+                                        <br><br>
+                                        What I found was that following your gut was simple. Placing a quick bet took no effort. But the moment you wanted to back up your decision with real research, things became complicated. As a new bettor, it felt intimidating. You had to bounce between third-party sites, learn unfamiliar terms, compare stats, and search for the best odds. Even after all that, you still had to return to the sportsbook, track down that exact bet, and only then could you place it.
+                                        <br><br>
+                                        When I tried large language models like ChatGPT and Perplexity, I noticed they already did a good job of covering the basics. They explained terms, summarized stats, and answered broad questions. They even provided you with the odds. The gap was not in what AI could provide but in how scattered the experience felt. Users still had to switch between sites, double-check data, and then return to the sportsbook on their own.
+                                        <br><br>
+                                        That was the moment I saw the opportunity: to connect those steps into one clear path. Instead of making users stitch research together, why not guide them from verified data and odds all the way to the sportsbook page where the bet is placed?
+                                        <br><br>
+                                        <blockquote class="quote">What if finishing research meant landing directly on the sportsbook showing the bet?</blockquote></p>
+                                        <figure class="week-banner figure-with-title">
+                                            <div class="figure-image-wrap">
+                                                <img src="./img/betbot-userflow.png" alt="User Flow" />
+                                            </div>
+                                        </figure>
+
+                                        <figure class="week-banner figure-with-title">
+                                            <div class="figure-image-wrap">
+                                                <img src="./img/user-journey.png" alt="userjourney" />
+                                                <figcaption class="figure-title-overlay">Betbot User Journey</figcaption>
+                                            </div>
+                                        </figure>
+                                    </div>
+                                </section>
+                                <section class="week-section" id="week2">
+                                    <header class="week-header">
+                                        <div class="week-header-inner">
+                                            <div class="week-icon" aria-hidden="true">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <circle cx="12" cy="12" r="9"/>
+                                                    <path d="M12 7v5l3 3"/>
+                                                </svg>
+                                            </div>
+                                            <div class="week-title-group">
+                                                <h1 class="week-title">Week 2</h1>
+                                                <p class="week-subtitle">Market Validation & User Journey</p>
+                                            </div>
+                                        </div>
+                                        <div class="week-separator"></div>
+                                    </header>
+                                    <div class="week-body">
+                                        <p>After mapping the user journey, I wanted to see whether this friction was just a minor annoyance or something that actually shaped the experience. To dig deeper, I reviewed sportsbook apps and third-party betting tools. What I found generally fell into two extremes:</p>
+
+                                        <ul>
+                                        <li>Some apps pushed unsolicited betting picks, generated by their own algorithms, regardless of user intent.</li>
+                                        <li>Others overwhelmed users with endless stats and trends—useful in theory, but difficult to interpret or act on.</li>
+                                        </ul>
+                                        <br/>
+                                        <p>AI-driven flows weren’t much better. A typical pattern looked like this:</p>
+
+                                        <ul>
+                                        <li>You ask a simple question and receive text blocks with odds, stats, and a short summary.</li>
+                                        <li>You then have to remember the answer, switch to the sportsbook, search for the right odds, and finally locate and place the bet yourself.</li>
+                                        </ul>
+                                        <br/>
+                                        <p>At first, I cast my net too wide. I compared everything from poker platforms to esports apps. The scope became blurry, and honestly, it made me doubt the idea. But once I narrowed down to a single sport, the picture became clearer. Focusing on one league gave me structured data, a defined season, and enough volume to test the concept without overwhelming the MVP.</p>
+                                        <div class="week-separator"></div>
+                                        <p><strong><span class="lesson-lead">What stood out:</span> New bettors want tools that help them make choices without sorting through pages of stats. They need clear answers they can act on. Sportsbooks spend millions to bring these users in, so it’s in their interest to make the experience easier to use.</strong></p>
+                                        
+                                        <!-- <div class="tri-gallery" role="group" aria-label="Research gallery">
+                                            <figure class="tri-item">
+                                                <div class="figure-image-wrap">
+                                                    <img src="./img/placeholder.png" alt="Survey dashboard screenshot" />
+                                                    <figcaption class="figure-title-overlay">Survey Dashboard</figcaption>
+                                                </div>
+                                            </figure>
+                                            <figure class="tri-item">
+                                                <div class="figure-image-wrap">
+                                                    <img src="./img/placeholder.png" alt="Recruitment filtering interface" />
+                                                    <figcaption class="figure-title-overlay">Recruitment Filters</figcaption>
+                                                </div>
+                                            </figure>
+                                            <figure class="tri-item">
+                                                <div class="figure-image-wrap">
+                                                    <img src="./img/placeholder.png" alt="Raw response sample" />
+                                                    <figcaption class="figure-title-overlay">Raw Responses</figcaption>
+                                                </div>
+                                            </figure>
+                                        </div> -->
+                                        <h3 class="list-heading">User Research</h3>
+
+                                        <p>Then, I started surveying potential users. I focused on the NFL since it has the largest betting market in the United States and offered a wide pool of people to survey. To recruit participants, I used a third-party platform called Prolific, which let me filter down from a broad audience to a targeted group of NFL sports bettors. On May 13, 2025, I collected 30 qualified responses from experienced bettors in the United States and Canada who watch sports daily or weekly.</p>
+                                        <br>
+                                        <p>Participants were men between the ages of 22 and 55, with an average age of 38. Most identified as White (24), with smaller groups identifying as Black (3), Mixed (2), and Asian (1). Nearly all lived in the United States (28), with 2 from Canada. All spoke English, most worked full-time (25), and four were students.</p>
+
+                                        <p><strong class="highlight">Participant Demographics</strong></p>
+                                            <ul>
+                                            <li><strong>Total participants:</strong> 30</li>
+                                            <li><strong>Age:</strong> 22–55 (average 38)</li>
+                                            <li><strong>Gender:</strong> All identified as men</li>
+                                            <li><strong>Ethnicity:</strong> Majority White (24), with smaller groups identifying as Black (3), Mixed (2), and Asian (1)</li>
+                                            <li><strong>Country of residence:</strong> Mostly United States (28), with 2 from Canada</li>
+                                            <li><strong>Language:</strong> All reported English</li>
+                                            <li><strong>Student status:</strong> 4 students, 24 non-students (2 expired responses)</li>
+                                            <li><strong>Employment status:</strong> Primarily full-time (25), with a few unemployed (1) or other (1)</li>
+                                            </ul>
+
+
+                                        <figure class="figure-with-title">
+                                            <div class="figure-image-wrap">
+                                                <img src="./img/prolific-screenshot.png" alt="Prolific survey platform screenshot" />
+                                                <figcaption class="figure-title-overlay">Prolific Survey Platform</figcaption>
+                                            </div>
+                                        </figure>
+
+                                        <h3 class="list-heading">What I Learned</h3>
+                                        <p class="list-sublead">The data showed clear patterns:</p>
+                                        <ul>
+                                            <li><strong>Betting frequency is high.</strong> 66% of respondents place bets at least once a week, and 41% do so a few times a week. This means Betbot needs to support fast, repeatable flows — bettors don’t have time for long research cycles every time.</li>
+                                            <li><strong>Football and basketball dominate.</strong> Almost every respondent follows NFL/NCAAF (94%) and NBA (91%), with baseball (63%) and hockey (44%) coming second. This confirmed that starting with football and basketball first made sense for scaling.</li>
+                                            <li><strong>Stats matter, but transparency matters more.</strong> On average, bettors rated stats a 6.4/10 in importance, but 59% said they want a second opinion and 69% said clear explanations boosted their confidence. Bettors don’t just want numbers — they want reassurance.</li>
+                                            <li><strong>Top frustrations were trust.</strong> People complained about research taking too long, data being scattered, and not knowing which stats to trust. Many also said they wanted transparency in how picks were made, and a record of reliability.</li>
+                                        </ul>
+
+                                        <div class="figure-links-group figure-links--summary">
+                                            <div class="figure-links">
+                                                <a href="./docs/Betbot Survey Report Summary.pdf" download="Betbot-Survey-Report-Summary.pdf">
+                                                    <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                                    </svg>
+                                                    Download Research Summary
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="figure-links-sep"></div>
+
+                                        <div class="figure-links-group figure-links--docs">
+                                            <div class="figure-links">
+                                                <a href="./docs/betbot-demographic-data.csv" download="betbot-demographic-data.csv">
+                                                    <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                                    </svg>
+                                                    Download Full Demographics Report | CSV
+                                                </a>
+                                            </div>
+                                            <div class="figure-links">
+                                                <a href="./docs/betbot-survey-data-(no-emails).xlsx" download="betbot-survey-data-no-emails.xlsx">
+                                                    <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                                    </svg>
+                                                    Download Full Research Report | XLSX
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <figure class="figure-with-title">
+                                            <div class="carousel" data-images="./img/betbot-research carousel/Betbot Survey Report Summary_Page_01.png|./img/betbot-research carousel/Betbot Survey Report Summary_Page_02.png|./img/betbot-research carousel/Betbot Survey Report Summary_Page_03.png|./img/betbot-research carousel/Betbot Survey Report Summary_Page_04.png|./img/betbot-research carousel/Betbot Survey Report Summary_Page_05.png|./img/betbot-research carousel/Betbot Survey Report Summary_Page_06.png|./img/betbot-research carousel/Betbot Survey Report Summary_Page_07.png|./img/betbot-research carousel/Betbot Survey Report Summary_Page_08.png|./img/betbot-research carousel/Betbot Survey Report Summary_Page_09.png">
+                                                <button class="carousel-btn carousel-prev" aria-label="Previous slide"><</button>
+                                                <img class="carousel-slide" src="./img/betbot-research carousel/Betbot Survey Report Summary_Page_01.png" alt="BetBot Research Summary slide 1" loading="lazy" decoding="async" />
+                                                <button class="carousel-btn carousel-next" aria-label="Next slide">></button>
+                                                <figcaption class="figure-title-overlay">BetBot Research Summary</figcaption>
+                                            </div>
+                                        </figure>
+
+                                        <h3 class="list-heading">Implications for Design</h3>
+                                        <p class="list-sublead">These findings shaped the core UX ideas:</p>
+                                        <ul>
+                                            <li>For the MVP, Betbot will focus solely on football before scaling to basketball and other sports.</li>
+                                            <li>The overall flow should remain as simple yet informative as possible, with easy-to-eye UI elements and components.</li>
+                                            <li>Each bet option/component will include a clear “why Betbot thinks this is a good or bad idea,” backed by a short explanation and verified sources for transparency.</li>
+                                        </ul>
+
+                                        <div class="case-separator"></div>
+                                        <p><strong><span class="lesson-lead">Lesson learned:</span> Bettors are information-hungry but trust-challenged. They want research that is fast, reliable, and ends in a bet they feel confident placing.</strong></p>
+                                    </div>
+                                </section>
+                                <section class="week-section" id="week3">
+                                    <header class="week-header">
+                                        <div class="week-header-inner">
+                                            <div class="week-icon" aria-hidden="true">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <circle cx="12" cy="12" r="9"/>
+                                                    <path d="M12 7v5l3 3"/>
+                                                </svg>
+                                            </div>
+                                            <div class="week-title-group">
+                                                <h1 class="week-title">Week 3</h1>
+                                                <p class="week-subtitle">Design & Prototyping</p>
+                                            </div>
+                                        </div>
+                                        <div class="week-separator"></div>
+                                    </header>
+                                    <div class="week-body">
+                                        <p>I built the first mockups in Figma and tested them with my PM and a few friends. The reaction was the same: the app felt crowded and confusing. This was not what we wanted to build. It looked more like another research tool full of charts and scattered information, exactly what we wanted to avoid, and too close to what competitors were already doing.</p>
+                                        <br/>
+                                        <h3>Early Mockups / Concept:</h3>
+                                        <div class="tri-gallery" role="group" aria-label="Early mockups gallery">
+                                           
+                                            <figure class="tri-item">
+                                                <div class="figure-image-wrap">
+                                                    <img src="./img/betbot-oldmockup-desktop_dashboard01.png" alt="Early mockup" />
+                                                    <figcaption class="figure-title-overlay">Early Mockup</figcaption>
+                                                </div>
+                                            </figure>
+
+                                            <figure class="tri-item">
+                                                <div class="figure-image-wrap">
+                                                    <img src="./img/betbot-oldmockup-desktop_dashboard03.png" alt="Early mockup" />
+                                                    <figcaption class="figure-title-overlay">Early Component Design</figcaption>
+                                                </div>
+                                            </figure>
+
+                                            <figure class="tri-item">
+                                                <div class="figure-image-wrap">
+                                                    <img src="./img/betbot-oldmockup-desktop_dashboard02.png" alt="Early mockup" />
+                                                    <figcaption class="figure-title-overlay">Early Mockup</figcaption>
+                                                </div>
+                                            </figure>
+                                           
+                                        </div>
+
+                                        <figure class="inline-image figure-with-title inline-image--lg">
+                                            <div class="figure-image-wrap">
+                                                <img src="./img/betbot-early-mockup(placeholder).png" data-src="./img/betbot-early-mockup.gif" alt="Chat-first concept large preview" loading="lazy" decoding="async" fetchpriority="low" />
+                                                <figcaption class="figure-title-overlay">Quick Figma Prototype</figcaption>
+                                            </div>
+                                        </figure>
+
+                                        <br>
+
+                                        <p>Even though we were happy with the visual outcome, user feedback pushed us to rethink the approach. Testers felt overwhelmed by the sheer amount of information, which showed us that;<strong class="highlight"> More features don’t automatically translate to better UX.</strong>
+                                        <p>We realized we weren’t aiming to build another complex dashboard. This was the opposite of the problem we set out to solve. We wanted something that felt simple and direct. That’s when we shifted to a chat-first model. Instead of dumping data, the app would answer questions in a conversational flow, with extra, interactive details when the user asked for them.</p>
+                                        <p>At the same time, we narrowed our audience. Our competing platforms served professional bettors who wanted deep stats and probability models. Our research showed us the opportunity was with new and casual bettors and sports fans who bet regularly but don’t want to get lost in spreadsheets.</p>
+                                        <blockquote class="quote">We now had a foundation solid enough to start our development:</blockquote></p>
+                                        <figure class="inline-image figure-with-title inline-image--lg">
+                                            <div class="figure-image-wrap">
+                                                <img src="./img/betbot-chatfirst-mockup-placeholder.png" data-src="./img/betbot-chatfirst-mockup.gif" alt="Chat-first concept large preview" loading="lazy" decoding="async" fetchpriority="low" />
+                                                <figcaption class="figure-title-overlay">Updated Interactive Prototype</figcaption>
+                                            </div>
+                                        </figure>
+
+                                        <br>
+
+                                        <p>After switching to this model, the app became lighter and easier to use. Testers said it felt more approachable and less like work. The flow went from ‘ask a question → drown in data’ to ‘ask a question → get a clear answer first, then expand if needed.’</p>
+                                        <p><strong class="highlight">To keep the MVP lean, we paused on features like the betslip optimizer/editor tool and concentrated on delivering accurate information above everything else.</strong></p>
+                                        <p>But a new challenge came up: users asked,</p>
+                                        <blockquote class="quote">How is this different from other AI chat platforms?</blockquote>
+
+                                        <div class="duo-gallery" role="group" aria-label="Comparison charts">
+                                            <figure class="tri-item">
+                                                <div class="figure-image-wrap">
+                                                    <img src="./img/chatbot-ui-claude.png" alt="Comparison chart A" />
+                                                    <figcaption class="figure-title-overlay">Claude Dashboard UI</figcaption>
+                                                </div>
+                                            </figure>
+                                            <figure class="tri-item">
+                                                <div class="figure-image-wrap">
+                                                    <img src="./img/chatbot-ui-betbot.png" alt="Comparison chart B" />
+                                                    <figcaption class="figure-title-overlay">Betbot Dashboard UI</figcaption>
+                                                </div>
+                                            </figure>
+                                        </div>
+
+                                        <p>The difference was in the flow. AI chat tools did give answers, broad, but still answers. That was our main struggle: we were competing with AI giants who could already provide some information.</p>
+                                        <p>Betbot stood out by linking users straight to the sportsbook bet page for the user's desired picks, paired with a hyper-focused sports betting design and helpful interactive data components/visuals.</p>
+
+                                        <div class="case-separator"></div>
+                                        <p><strong><span class="lesson-lead">Lesson learned:</span> Competing with AI giants taught me that design alone isn’t enough. I was intimidated at first, but I realized there’s always space if you carve out a niche and show clear purpose.</strong></p>
+                                    </div>
+                                </section>
+                                <section class="week-section" id="week45">
+                                    <header class="week-header">
+                                        <div class="week-header-inner">
+                                            <div class="week-icon" aria-hidden="true">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <circle cx="12" cy="12" r="9"/>
+                                                    <path d="M12 7v5l3 3"/>
+                                                </svg>
+                                            </div>
+                                            <div class="week-title-group">
+                                                <h1 class="week-title">Week 4–5</h1>
+                                                <p class="week-subtitle">MVP Build & Iteration</p>
+                                            </div>
+                                        </div>
+                                        <div class="week-separator"></div>
+                                    </header>
+                                    <div class="week-body">
+                                        <p>So I have started as the only visual, product designer in this project. I was basically tasked with providing quick concepts, testing them out & iteration. Building basic interactive prototypes & test flows. </p>
+
+                                        <p><strong class="highlight">But then things didn’t work out and our only Developer changed his mind and left.</strong></p>
+
+                                        <p>Since we were bootstrapped and lean, we couldn’t offer him much to stay. The reality hit us hard: either find a way forward or end the project. I decided to push on because I wanted to see if this idea could go somewhere. We reached out to developers, but it was difficult to bring anyone on. People can’t afford to work for low pay, and that’s very much understandable.</p>
+
+                                        <p>After a long conversation with my PM, we decided to look into low-code AI-powered app builders & tools. Neither of us was very technical, but I had some frontend coding experience and a basic understanding of how web apps worked. So after a long discussion, we decided I would also take on the responsibility of developing the app. And it was scary.</p>
+
+                                        <p>I started out by researching low-code AI tools with my limited coding knowledge. I tried a few AI developers like Lovable and Bolt, but eventually decided to use Replit. It had its own challenges compared to the others. It was less “low-code” and required more technical work, but it offered a stronger backend structure and a more capable AI agent.</p>
+                                        <p><strong class="highlight">I committed to Replit and moved into development.</strong></p>
+                                        <p> I spent the first few very stressful days learning how to integrate an LLM, make API calls, manage messages, and structure prompts. By the end, I built a working AI-powered core feature, though the UI was rough.</p>
+
+                                        <figure class="inline-image figure-with-title inline-image--lg">
+                                            <div class="figure-image-wrap">
+                                                <img src="./img/replit-chatbot-placeholder.png" data-src="./img/replit-chatbot.gif" alt="Chat-first concept large preview" loading="lazy" decoding="async" fetchpriority="low" />
+                                                <figcaption class="figure-title-overlay">Initial Replit Betbot Snapshot</figcaption>
+                                            </div>
+                                        </figure>
+                                        <br/>
+                                        <p>From there, I began piecing things together, composing multiple AI tools, doing constant research, asking questions, and reaching out for help when I was stuck. The process was very stressful and full of long nights, but eventually, I managed to build our working MVP.</p>
+
+                                        <h3 class="list-heading">What the MVP Included</h3>
+                                        <ul>
+                                            <li>A chat-first flow where users could ask betting-related questions.</li>
+                                            <li>Dynamic components that surfaced comparisons, player stats, and odds.</li>
+                                            <li>Direct sportsbook linking that turned research into action.</li>
+                                            <li>Even without a dedicated developer, we could still bring the vision to life. It proved the concept was real, and that gave us the confidence to keep going.</li>
+                                        </ul>
+                                        <br/>
+                                        <div class="case-separator"></div>
+                                        <br/>
+                                        <p><strong><span class="lesson-lead">Lesson learned:</span> Asking for help is part of the work, and it was what kept momentum going. Which was critical to our project. I couldn’t have built the MVP without reaching out for help and keeping up the momentum to move the project forward.</strong></p>
+                                    </div>
+                                </section>
+                                <section class="week-section" id="closing-thoughts">
+                                    <header class="week-header">
+                                        <div class="week-header-inner">
+                                            <div class="week-icon" aria-hidden="true">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <circle cx="12" cy="12" r="9"/>
+                                                    <path d="M12 7v5l3 3"/>
+                                                </svg>
+                                            </div>
+                                            <div class="week-title-group">
+                                                <h1 class="week-title">Closing Thoughts</h1>
+                                                <p class="week-subtitle">Reflections and next steps</p>
+                                            </div>
+                                        </div>
+                                        <div class="week-separator"></div>
+                                    </header>
+                                    <div class="week-body">
+                                        <p>This project began with a simple problem: sports betting can be overwhelming. By focusing on clarity, we built an MVP that stripped away noise and gave users a direct way to conduct their basic research (compare odds, stats, and trends and more...). And once they are happy with it, a seamless experience helping them place their bets. The process showed me that real progress came from supportive collaboration and consistent forward motion, not from chasing perfection. Building the MVP required reaching out for support and keeping our momentum moving at each step.</p>
+
+                                        <blockquote class="quote">What we built is a starting point, not a finished product. Betbot won't ever be perfect and we will continue to iterate, but it proves the idea has value and room to grow.</blockquote>
+                                    </div>
+                                </section>
+
+                                <section class="week-section" id="live-demo" aria-label="Live Prototype">
+                                    <header class="week-header">
+                                        <div class="week-header-inner">
+                                            <div class="week-icon" aria-hidden="true">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M9 18l6-6-6-6"/>
+                                                </svg>
+                                            </div>
+                                            <div class="week-title-group">
+                                                <h1 class="week-title">Visit Prototype</h1>
+                                                <p class="week-subtitle">Check out the initial prototype & the final product.</p>
+                                            </div>
+                                        </div>
+                                        <div class="week-separator"></div>
+                                    </header>
+                                    <div class="week-body">
+                                        <div class="prototype-topbar" role="navigation" aria-label="Prototype links">
+                                            <a class="prototype-link" href="https://dodocimen.github.io/betbot-prototype/" target="_blank" rel="noopener noreferrer">
+                                                <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                                </svg>
+                                                go to static prototype
+                                            </a>
+                                            <div class="final-group">
+                                                <a class="prototype-link prototype-link--final is-disabled" href="#" aria-disabled="true" tabindex="-1" title="Final product coming soon">
+                                                    <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                                    </svg>
+                                                    go to live product
+                                                </a>
+                                                <span class="countdown" id="final-countdown" data-target="2025-09-09T00:00:00Z" aria-live="polite"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="iphone-prototype" role="region" aria-label="Scrollable iPhone mockup">
+                                            <div class="iphone-device">
+                                                <img class="iphone-frame-img" src="./img/iphone-frame.png" alt="iPhone frame" draggable="false" />
+                                                <div class="iphone-screen-clip" aria-hidden="false">
+                                                    <div class="iphone-scroll" tabindex="0">
+                                                        <img class="iphone-scroll-img" src="./img/betbot-scroll-2.png" alt="Scrollable app preview" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="project-panel" role="tabpanel" data-index="1" hidden>
+                        <div class="project-modal__header">
+                            <div class="project-nav">
+                                <a href="#" class="project-back-link" aria-label="Go to previous project">
+                                    <svg class="arrow-icon arrow-icon--left" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                                    </svg>
+                                    Back
+                                </a>
+                                <a href="#" class="project-next-link" aria-label="Go to next project">
+                                    Next
+                                    <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="project-header-right">
+                                
+                                <button type="button" class="project-close-btn" aria-label="Close modal">×</button>
+                            </div>
+                        </div>
+                        <div class="panel-placeholder">
+                            <img src="./img/project2.png" alt="Project 2 placeholder" />
+                            <h1 class="panel-title">Project 2 & 3 are currently being documented.</h1>
+                            <p class="panel-desc">I’m organizing assets, notes, and visuals. A clean walkthrough with outcomes and learnings will be published soon.</p>
+                        </div>
+                    </section>
+                    <section class="project-panel" role="tabpanel" data-index="2" hidden>
+                        <div class="project-modal__header">
+                            <div class="project-nav">
+                                <a href="#" class="project-back-link" aria-label="Back to projects">
+                                    <svg class="arrow-icon arrow-icon--left" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                                    </svg>
+                                    Back
+                                </a>
+                                <a href="#" class="project-next-link" aria-label="Go to next project">
+                                    Next
+                                    <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="project-header-right">
+                                
+                                <button type="button" class="project-close-btn" aria-label="Close modal">×</button>
+                            </div>
+                        </div>
+                        <div class="panel-placeholder">
+                            <img src="./img/project3.png" alt="Project 3 placeholder" />
+                            <h1 class="panel-title">Project 2 & 3 are currently being documented.</h1>
+                            <p class="panel-desc">I’m organizing assets, notes, and visuals. A clean walkthrough with outcomes and learnings will be published soon.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="project-tabs project-tabs--floating" role="tablist" aria-label="Project tabs">
+                <button class="project-tab" role="tab" data-index="0" aria-selected="true">Project 1</button>
+                <button class="project-tab" role="tab" data-index="1" aria-selected="false">Project 2</button>
+                <button class="project-tab" role="tab" data-index="2" aria-selected="false">Project 3</button>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+        <div class="footer-content">
+            <div class="footer-cta">
+                <h1 class="footer-title">Let's have a chat!</h1>
+                <button class="footer-email" data-email="dogacimen35@gmail.com" aria-label="Copy email to clipboard">dogacimen35@gmail.com</button>
+            </div>
+            <div class="footer-separator"></div>
+            <div class="socials">
+                <button class="social-btn" aria-label="GitHub profile">
+                    <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                    </svg>
+                    <span class="social-label">@github</span>
+                </button>
+                <button class="social-btn" aria-label="Dribbble profile">
+                    <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/>
+                    </svg>
+                    <span class="social-label">@dribbble</span>
+                </button>
+                <button class="social-btn" aria-label="Twitter profile">
+                    <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                    </svg>
+                    <span class="social-label">@twitter</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
